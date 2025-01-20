@@ -1,6 +1,6 @@
 import React from 'react';
-import { concertItemData } from '../_constants/concertItemData';
-import CategoryItem from './CategoryItem';
+import { concertItemData } from '../../../_constants/concertItemData';
+import CategoryItem from '../../../_component/CategoryItem';
 
 const CategoryList = () => {
   return (
