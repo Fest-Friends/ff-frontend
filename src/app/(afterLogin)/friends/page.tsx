@@ -1,6 +1,7 @@
 import { FriendComponent } from './_component/FriendComponent';
 import { Friend } from '../_types/friends';
 import FilterDropdown from './_component/FilterDropdown';
+import Link from 'next/link';
 export default function Page() {
   const dummyFilters: { title: string; categorys: string[] }[] = [
     { title: '성별', categorys: ['무관', '남성', '여성'] },
@@ -82,7 +83,7 @@ export default function Page() {
   ];
 
   return (
-    <div className="py-10 w-full px-5">
+    <div className="w-full px-5 py-10">
       <div className="mb-6 text-2xl">
         나의 성격과 맞는
         <br />
@@ -92,20 +93,21 @@ export default function Page() {
         {dummyFilters.map((filter) => (
           <FilterDropdown key={filter.title} title={filter.title} categorys={filter.categorys} />
         ))}
-       
       </div>
       <div className="flex flex-col items-center gap-4">
         {dummyFriends.map((friend) => (
-          <FriendComponent
-            key={friend.id}
-            id={friend.id}
-            introduction={friend.introduction}
-            name={friend.name}
-            gender={friend.gender}
-            mbti={friend.mbti}
-            friendType={friend.friendType}
-            volume={friend.volume}
-          />
+          <Link className="flex w-full items-end" href={`friends/${friend.id}`} key={friend.id}>
+            <FriendComponent
+              key={friend.id}
+              id={friend.id}
+              introduction={friend.introduction}
+              name={friend.name}
+              gender={friend.gender}
+              mbti={friend.mbti}
+              friendType={friend.friendType}
+              volume={friend.volume}
+            />
+          </Link>
         ))}
       </div>
     </div>

@@ -1,8 +1,9 @@
 'use client';
 import React, { useEffect } from 'react';
-import { concertItemData } from '../_constants/concertItemData';
-import CategoryItem from './CategoryItem';
+import { concertItemData } from '../../../_constants/concertItemData';
+import CategoryItem from '../../../_component/CategoryItem';
 import { useConcertListStore } from '@/app/store/concertListStore';
+
 
 const CategoryList = () => {
   const { actions, searchData } = useConcertListStore();

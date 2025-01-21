@@ -13,11 +13,8 @@ export function FriendComponent({
   volume,
 }: Friend) {
   return (
-    <Link
-      href={`/friends/${id}`}
-      className="flex w-full items-end justify-between rounded-lg bg-areaBg p-4"
-    >
-      <div className='flex flex-col gap-4'>
+    <div className="flex w-full items-end justify-between rounded-lg bg-areaBg p-4">
+      <div className="flex flex-col gap-4">
         <div>
           <div className="text-sm text-textLess">{introduction}</div>
           <div className="flex items-center">
@@ -52,6 +49,6 @@ export function FriendComponent({
         height={112}
         className="h-full"
       />
-    </Link>
+    </div>
   );
 }
