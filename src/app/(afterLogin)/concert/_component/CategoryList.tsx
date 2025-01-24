@@ -1,11 +1,19 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
 import { concertItemData } from '../../../_constants/concertItemData';
 import CategoryItem from '../../../_component/CategoryItem';
+import { useConcertListStore } from '@/app/store/concertListStore';
+
 
 const CategoryList = () => {
+  const { actions, searchData } = useConcertListStore();
+  useEffect(() => {
+    actions.setList(concertItemData);
+  }, []);
+
   return (
     <div className="w-full px-5 pb-10">
-      {concertItemData.map((item, idx) => (
+      {searchData.map((item, idx) => (
         <CategoryItem
           key={item.id}
           name={item.name}

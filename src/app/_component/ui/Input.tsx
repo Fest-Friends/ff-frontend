@@ -6,8 +6,9 @@ interface InputProps {
   type?: string;
   placeholder: string;
   value?: string;
-  role?: string;
+  role?: 'search' | 'password';
   isImg?: boolean; // Input에 이미지 추가 여부 ex)password, search
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function Input({
@@ -15,6 +16,7 @@ export default function Input({
   placeholder,
   value,
   role,
+  onChange,
   isImg = false,
 }: InputProps) {
   const [isClient, setIsclient] = useState(false);
@@ -40,6 +42,7 @@ export default function Input({
         className={`flex w-full items-center gap-3 rounded-xl border bg-areaBg px-4 py-3 ${isFocused ? 'border-primary' : 'border-transparent'}`}
       >
         <input
+          onChange={onChange}
           type={inputType}
           placeholder={placeholder}
           value={value}
@@ -48,14 +51,20 @@ export default function Input({
           className="placeholder:placeholder w-full bg-transparent text-sm text-white focus:outline-none"
         />
 
-        {role === 'password' && isImg && (
+        {isImg && (
           <Image
             width={20}
             height={20}
-            src={inputType === 'password' ? '/image/visibility_off.png' : '/image/visibility.png'}
+            src={
+              role === 'search'
+                ? '/image/search.png'
+                : inputType === 'password'
+                  ? '/image/visibility_off.png'
+                  : '/image/visibility.png'
+            }
             alt="toggle visibility"
-            onClick={togglePWVisibility}
-            className="cursor-pointer"
+            onClick={role === 'password' ? togglePWVisibility : undefined}
+            className={role === 'password' ? 'cursor-pointer' : ''}
           />
         )}
       </div>
