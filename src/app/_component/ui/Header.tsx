@@ -4,7 +4,7 @@ import { useParams, usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { getTitleFromSlug } from '@/app/_constants/getTitleFromSlug';
+import { getTitleFromSlug } from '@/app/_utils/getTitleFromSlug';
 
 function headerType(pathname: string): string {
   const logoHeader = ['/', '/concert'];

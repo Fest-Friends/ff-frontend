@@ -1,12 +1,15 @@
 import Image from 'next/image';
 import { HomeBackground } from '../home/HomeBackground';
 import { HotConcertList } from '../home/HotConcertList';
+import HomeCarousel from '../home/HomeCarousel';
+
 export default function HomeLayout() {
   // 토큰 검사한다음 토큰 유무에 따라 레이아웃 다르게
 
   return (
     <div>
-      <HomeBackground />
+      {/* <HomeBackground */}
+      <HomeCarousel />
       <div className="mb-40 mt-10 px-5">
         <div className="flex items-center gap-2">
           <div className="text-xl font-semibold">현재 가장 핫한 콘서트</div>
