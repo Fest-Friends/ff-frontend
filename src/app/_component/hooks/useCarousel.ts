@@ -3,7 +3,7 @@ import { setCarouselData } from "@/app/_utils/carouselUtils";
 import { useState } from "react";
 
 
-const useCarousel = ( reservedData )=> {
+const useCarousel = ( reservedData  )=> {
 
   const CarouselData = setCarouselData(reservedData);
 
@@ -44,7 +44,7 @@ const useCarousel = ( reservedData )=> {
    };
 
 
-   return {CarouselData ,nextHandler  , prevHandler ,current ,transition};
+   return {CarouselData ,nextHandler  , prevHandler  ,   setCurrent,current ,transition ,CAROUSEL_LENGTH };
 };
 
 export default useCarousel;
