@@ -1,4 +1,5 @@
 export interface Friend {
+  id: number;
   introduction: string;
   name: string;
   gender: string;

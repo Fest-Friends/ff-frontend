@@ -2,7 +2,7 @@ import Button from '@/app/_component/ui/Button';
 import Image from 'next/image';
 import { findFriendById } from './_lib/dummyData';
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const data = findFriendById(Number(id));
   console.log(data?.friendType);
@@ -39,7 +39,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             <span className="text-[40px] font-semibold text-primary">{data?.volume}</span> Volume
           </div>
           <div className="h-full max-w-[300px] flex-1">
-            <Button text="공연 친구 맺기"/>
+            <Button text="공연 친구 맺기" />
           </div>
         </div>
       </div>
