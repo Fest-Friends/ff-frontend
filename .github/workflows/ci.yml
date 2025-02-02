@@ -1,0 +1,36 @@
+name: Compress images & Build Frontend
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    name: CI
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x] #  여러 Node.js 버전에서 실행
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # 저장소 불러오기
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn' #Yarn 패키지 캐싱
+
+      - name: Install dependencies
+        run: yarn install # yarn
+
+      - name: Run Grunt tasks
+        run: yarn grunt # Grunt 실행 (Yarn 사용)
+
+      - name: Compress Images
+        uses: calibreapp/image-actions@main
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
