@@ -1,8 +1,7 @@
 import ConcertDetailInfo from '../_component/ConcertDetailInfo';
 import Image from 'next/image';
 import SearchFriendsToggle from '../_component/SearchFriendsToggle';
-import { FriendComponent } from '../../friends/_component/FriendComponent';
-
+import FriendComponent from '';
 export default async function Page() {
   return (
     <div className="mb-40 mt-[147px]">
@@ -29,6 +28,7 @@ export default async function Page() {
         </div>
         <FriendComponent
           key={1}
+          id={1}
           introduction="공연 한줄소개"
           name="프렌즈 이름"
           gender="남"

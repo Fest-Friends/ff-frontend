@@ -2,7 +2,16 @@
 import Image from 'next/image';
 import { Friend } from '../../_types/friends';
 
-export function FriendComponent({ introduction, name, gender, mbti, friendType, volume }: Friend) {
+export function FriendComponent({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  id,
+  introduction,
+  name,
+  gender,
+  mbti,
+  friendType,
+  volume,
+}: Friend) {
   return (
     <div className="flex w-full items-end justify-between rounded-lg bg-areaBg p-4">
       <div className="flex flex-col gap-4">
