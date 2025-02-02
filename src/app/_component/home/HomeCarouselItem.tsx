@@ -30,7 +30,7 @@ const HomeCarouselItem = ({
     >
       <Image src={imageUrl} alt="Background" className="rounded-lg object-cover opacity-50" fill />
 
-      <div className="z-10 mb-2 flex w-full flex-col justify-between p-4">
+      <div className="z-10 flex w-full flex-col justify-between p-4">
         <div>
           <p className="mb-1 text-sm font-normal text-white">{period}</p>
           <p className="text-base font-medium text-white">{name}</p>
