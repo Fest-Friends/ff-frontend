@@ -27,8 +27,11 @@ jobs:
       - name: Install dependencies
         run: yarn install # yarn
 
-      - name: Run Grunt tasks
-        run: yarn grunt # Grunt 실행 (Yarn 사용)
+     - name: Run ESLint
+        run: yarn lint
+
+      - name: Run Next.js Build
+        run: yarn build  
 
       - name: Compress Images
         uses: calibreapp/image-actions@main
