@@ -10,7 +10,6 @@ interface HomeCarouselItemProps {
   style: {
     transform: string;
     transition: string;
-    position: string;
   };
 }
 
