@@ -1,4 +1,6 @@
-export const reservedData = [
+import { ReservedData } from "../(home)/_types/reservedData";
+
+export const reservedData :  ReservedData[] = [
   {
     id: 1,
     name: "2025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL",

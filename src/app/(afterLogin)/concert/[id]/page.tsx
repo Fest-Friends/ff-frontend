@@ -1,7 +1,7 @@
 import ConcertDetailInfo from '../_component/ConcertDetailInfo';
 import Image from 'next/image';
 import SearchFriendsToggle from '../_component/SearchFriendsToggle';
-import FriendComponent from '';
+import { FriendComponent } from '@/app/(afterLogin)/friends/_component/FriendComponent';
 export default async function Page() {
   return (
     <div className="mb-40 mt-[147px]">

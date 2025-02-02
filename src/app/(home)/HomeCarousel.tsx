@@ -2,7 +2,7 @@
 import HomeCarouselItem from './HomeCarouselItem';
 import Image from 'next/image';
 import { reservedData } from '@/app/_constants/reservedData';
-import useCarousel from '../hooks/useCarousel';
+import useCarousel from '../_hooks/useCarousel';
 const HomeCarousel = () => {
   const {
     CarouselData,

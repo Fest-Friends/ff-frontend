@@ -10,6 +10,7 @@ interface ButtonProps {
   color?: boolean;
   bgColor?: string;
   style?: React.CSSProperties;
+  onClick?: () => void;
 }
 
 export default function Button({
@@ -18,18 +19,19 @@ export default function Button({
   width = '100%',
   style,
   variant = 'default',
+  onClick,
 }: ButtonProps) {
-
   const variantCss: Record<variantType, string> = {
     default: 'bg-primary text-textDark',
     secondary: 'text-textLess border border-textMuted',
   };
   return (
     <button
+      onClick={onClick}
       className={`w-full items-center justify-center rounded-xl py-3 first-line:flex ${variantCss[variant]} text-sm font-semibold`}
-        style={{ marginTop: mt, width: width, ...style }}
-      >
-        {text}
-      </button>
+      style={{ marginTop: mt, width: width, ...style }}
+    >
+      {text}
+    </button>
   );
 }

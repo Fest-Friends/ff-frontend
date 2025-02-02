@@ -1,8 +1,6 @@
 import Image from 'next/image';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { HomeBackground } from '../home/HomeBackground';
-import { HotConcertList } from '../home/HotConcertList';
-import HomeCarousel from '../home/HomeCarousel';
+import HomeCarousel from '../(home)/HomeCarousel';
+import { HotConcertList } from '../(home)/HotConcertList';
 
 export default function HomeLayout() {
   // 토큰 검사한다음 토큰 유무에 따라 레이아웃 다르게

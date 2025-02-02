@@ -9,8 +9,9 @@ const FilterDropdown = ({ title, categorys }: { title: string; categorys: string
     setIsOpen(!isOpen);
   };
 
-  const handleOutsideClick = (e) => {
-    if (e.target.closest('#dropdownButton') || e.target.closest('#dropdownMenu')) return;
+  const handleOutsideClick = (e: MouseEvent) => {
+    const target = e.target as Element;
+    if (target.closest('#dropdownButton') || target.closest('#dropdownMenu')) return;
     setIsOpen(false);
   };
 

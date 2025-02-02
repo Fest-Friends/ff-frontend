@@ -1,9 +1,11 @@
 "use client"; 
 import { setCarouselData } from "@/app/_utils/carouselUtils";
 import { useState } from "react";
+import { ReservedData } from "../(home)/_types/reservedData";
 
 
-const useCarousel = ( reservedData )=> {
+
+const useCarousel = ( reservedData : ReservedData[])=> {
 
   const CarouselData = setCarouselData(reservedData);
 
@@ -12,7 +14,7 @@ const useCarousel = ( reservedData )=> {
    const [transition, setTransition] = useState(true);
  
    // n번째 슬라이드로 이동
-   const moveToNthSlide = (n) => {
+   const moveToNthSlide = (n : number) => {
      setTransition(false); // 트랜지션 비활성화
      setCurrent(n); // 현재 슬라이드 위치를 업데이트
      setTimeout(() => {
