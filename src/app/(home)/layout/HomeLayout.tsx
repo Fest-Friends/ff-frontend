@@ -2,6 +2,7 @@ import Image from 'next/image';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { HomeBackground } from '../HomeBackground';
 import { HotConcertList } from '../HotConcertList';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import HomeCarousel from '../HomeCarousel';
 
 export default function HomeLayout() {
@@ -9,8 +10,8 @@ export default function HomeLayout() {
 
   return (
     <div>
-      {/* <HomeBackground */}
-      <HomeCarousel />
+      <HomeBackground />
+      {/* <HomeCarousel /> */}
       <div className="mb-40 mt-10 px-5">
         <div className="flex items-center gap-2">
           <div className="text-xl font-semibold">현재 가장 핫한 콘서트</div>
