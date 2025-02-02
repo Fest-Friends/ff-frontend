@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 interface HomeCarouselItemProps {
-  id: number;
   name: string;
   imageUrl: string;
   period: string;
@@ -14,7 +13,6 @@ interface HomeCarouselItemProps {
 }
 
 const HomeCarouselItem = ({
-  id,
   style,
   name,
   imageUrl,

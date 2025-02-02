@@ -34,7 +34,6 @@ const HomeCarousel = () => {
         {CarouselData.map((item, idx) => (
           <HomeCarouselItem
             key={idx}
-            id={item.id}
             style={{
               transform: `translateX(${(idx - current) * 107}%)`,
               transition: transition ? 'transform 500ms ease-in-out' : 'none',

@@ -3,10 +3,7 @@ import Image from 'next/image';
 import SearchFriendsToggle from '../_component/SearchFriendsToggle';
 import { FriendComponent } from '../../friends/_component/FriendComponent';
 
-export default async function Page({ params }: { params: { id: string } }) {
-  // const { id } = await params;
-  // 서버 컴포넌트는 다름
-
+export default async function Page() {
   return (
     <div className="mb-40 mt-[147px]">
       <ConcertDetailInfo />
@@ -32,7 +29,6 @@ export default async function Page({ params }: { params: { id: string } }) {
         </div>
         <FriendComponent
           key={1}
-          id={1}
           introduction="공연 한줄소개"
           name="프렌즈 이름"
           gender="남"
@@ -44,8 +40,6 @@ export default async function Page({ params }: { params: { id: string } }) {
           <SearchFriendsToggle />
         </div>
       </div>
-
-      {/* <div></div>콘서트 상세정보 : {id} */}
     </div>
   );
 }
