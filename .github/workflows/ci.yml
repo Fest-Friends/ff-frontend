@@ -4,6 +4,10 @@ on:
   pull_request:
     branches:
       - develop
+    types:
+      - opened # PR이 처음 생성될 때 실행
+      - synchronize # PR에 추가 push가 발생하면 실행
+      - reopened # PR이 다시 열리면 실행
 
 jobs:
   build:
@@ -27,11 +31,11 @@ jobs:
       - name: Install dependencies
         run: yarn install # yarn
 
-     - name: Run ESLint
+      - name: Run ESLint
         run: yarn lint
 
       - name: Run Next.js Build
-        run: yarn build  
+        run: yarn build
 
       - name: Compress Images
         uses: calibreapp/image-actions@main
