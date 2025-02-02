@@ -3,7 +3,7 @@ import { setCarouselData } from "@/app/_utils/carouselUtils";
 import { useState } from "react";
 
 
-const useCarousel = ( reservedData  )=> {
+const useCarousel = ( reservedData )=> {
 
   const CarouselData = setCarouselData(reservedData);
 

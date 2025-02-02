@@ -15,7 +15,7 @@ const HomeCarousel = () => {
   } = useCarousel(reservedData);
   return (
     <div>
-      <h1 className="mb-6 ml-5 text-2xl font-normal leading-[33.6px]">
+      <h1 className="mx-5 mb-6 mt-10 text-2xl font-normal leading-[33.6px]">
         조만간 만나볼 <br /> <span className="font-semibold text-primary">아티스트</span>입니다.
       </h1>
       <div className="relative mx-auto flex h-[308px] max-w-[737px] justify-center overflow-hidden">
