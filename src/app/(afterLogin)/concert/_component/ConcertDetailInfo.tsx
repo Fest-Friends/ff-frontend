@@ -6,12 +6,15 @@ import InfoItem from './InfoItem';
 import { useParams } from 'next/navigation';
 import { concertItemData } from '@/app/_constants/concertItemData';
 export const findConcertItemById = (id:number) => {
-  return concertItemData.find((item) => item.id === id);
+  const data = concertItemData.find((item) => item.id === id);
+  if(data) {
+    return concertItemData.find((item) => item.id === id);
+  }
+  return concertItemData[0];
 };
 const ConcertDetailInfo = () => {
   const {id} = useParams();
   const data = findConcertItemById(Number(id));
-  console.log(data);
   return (
     <div className="relative h-fit w-full bg-areaBg">
       <Image
