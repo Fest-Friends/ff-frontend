@@ -1,4 +1,4 @@
-import Button from './ui/Button';
+import Button from '../../_component/ui/Button';
 
 export function HomeBackground() {
   return (

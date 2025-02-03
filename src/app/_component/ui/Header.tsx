@@ -19,7 +19,9 @@ export default function Header() {
   const router = useRouter();
   const params = useParams();
   const [isClient, setIsclient] = useState(false);
+  console.log(params);
   const [isDynamic] = useState<boolean>(Object.keys(params).length !== 0);
+  console.log(isDynamic);
   useEffect(() => {
     setIsclient(true);
   }, []);

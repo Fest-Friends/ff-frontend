@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import TanStackProvider from './_providers/TanStackProvider';
-import Header from './(home)/_component/ui/Header';
+import Header from './_component/ui/Header';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
