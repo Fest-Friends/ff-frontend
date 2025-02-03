@@ -1,7 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface CategoryItemProps {
+  id: number;
   name: string;
   location: string;
   period: string;
@@ -13,6 +15,7 @@ interface CategoryItemProps {
 }
 
 const CategoryItem = ({
+  id,
   name,
   location,
   period,
@@ -23,9 +26,11 @@ const CategoryItem = ({
   isFirst,
 }: CategoryItemProps) => {
   return (
-    <div className={`border-areaBg flex w-full border-b py-4 ${
+    <Link className={`border-areaBg flex w-full border-b py-4 ${
       isFirst ? 'pt-0' : ''
-    }`}>
+    }`}
+    href={`/concert/${id}`}
+    >
       <Image
         width={107}
         height={142}
@@ -66,7 +71,7 @@ const CategoryItem = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
