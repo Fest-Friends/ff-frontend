@@ -1,6 +1,9 @@
-import Button from './_component/ui/Button';
+'use client'
+import { useRouter } from 'next/navigation';
+import Button from '../_component/ui/Button';
 
 export function HomeBackground() {
+  const router = useRouter();
   return (
     <div className="flex w-full flex-col items-center gap-6 bg-home bg-cover bg-no-repeat px-5 py-20 text-sm leading-[19.6px]">
       {/* 타이틀과 서브타이틀 한 번 그룹핑 */}
@@ -13,7 +16,7 @@ export function HomeBackground() {
 
       {/* 버튼 DIV 상위에서 gap-6을 통해 제목과 버튼 두 콘텐츠 간격을 조정 */}
       <div className="flex w-full justify-center">
-        <Button variant="default" width="111px" text="프렌즈 찾기" />
+        <Button onClick={() => {router.push('/friends')}} variant="default" width="111px" text="프렌즈 찾기" />
       </div>
     </div>
   );
