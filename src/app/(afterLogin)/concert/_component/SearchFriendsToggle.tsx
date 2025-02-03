@@ -1,5 +1,5 @@
 'use client';
-import Button from '@/app/(home)/_component/ui/Button';
+import Button from '@/app/_component/ui/Button';
 import React, { useState } from 'react';
 
 const SearchFriendsToggle = () => {

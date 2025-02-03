@@ -1,4 +1,4 @@
-import Button from '@/app/(home)/_component/ui/Button';
+import Button from '@/app/_component/ui/Button';
 import Image from 'next/image';
 import { findFriendById } from './_lib/dummyData';
 
