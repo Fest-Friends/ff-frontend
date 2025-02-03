@@ -26,8 +26,8 @@ export default function SignUp() {
         {/* 아이디 */}
         <div className="flex flex-col gap-3">
           <div className="ml-1 text-base font-semibold text-white">아이디</div>
-          <Input type="text" placeholder="아이디를 입력하세요." {...register('id')} />
-          {errors.id && <div className="text-red-400"> {errors.id.message}</div>}
+          <Input type="text" placeholder="아이디를 입력하세요." {...register('username')} />
+          {errors.username && <div className="text-red-400"> {errors.username.message}</div>}
         </div>
 
         {/* 비밀번호 */}
