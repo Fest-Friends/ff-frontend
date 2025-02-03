@@ -1,13 +1,15 @@
+'use client'
 import Image from 'next/image';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { HomeBackground } from '../HomeBackground';
 import { HotConcertList } from '../HotConcertList';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import HomeCarousel from '../HomeCarousel';
+import { useRouter } from 'next/navigation';
 
 export default function HomeLayout() {
   // 토큰 검사한다음 토큰 유무에 따라 레이아웃 다르게
-
+  const router = useRouter();
   return (
     <div>
       <HomeBackground />
@@ -21,6 +23,7 @@ export default function HomeLayout() {
             height={16}
             alt="현재 가장 핫한 콘서트"
             className="cursor-pointer"
+            onClick={() => {router.push('/concert')}}
           />
         </div>
         <div className="mt-5 flex w-full flex-col items-center">

@@ -1,9 +1,20 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
-import Button from '@/app/(home)/_component/ui/Button';
+import Button from '@/app/_component/ui/Button';
 import InfoItem from './InfoItem';
-
+import { useParams } from 'next/navigation';
+import { concertItemData } from '@/app/_constants/concertItemData';
+export const findConcertItemById = (id:number) => {
+  const data = concertItemData.find((item) => item.id === id);
+  if(data) {
+    return concertItemData.find((item) => item.id === id);
+  }
+  return concertItemData[0];
+};
 const ConcertDetailInfo = () => {
+  const {id} = useParams();
+  const data = findConcertItemById(Number(id));
   return (
     <div className="relative h-fit w-full bg-areaBg">
       <Image
@@ -25,12 +36,12 @@ const ConcertDetailInfo = () => {
       </div>
       <div className="px-5 pb-4 pt-16">
         <div className="flex flex-col gap-1">
-          <p className="text-base text-textLess">블루스퀘어 마스터카드홀</p>
-          <p className="text-xl font-semibold text-white">소란 winter concert ‘BE MY LIGHT’</p>
+          <p className="text-base text-textLess">{data!.location}</p>
+          <p className="text-xl font-semibold text-white">{data!.name}</p>
         </div>
         <div className="mb-12 mt-5 grid gap-2">
-          <InfoItem title="장소" content="블루스퀘어 마스터카드홀" />
-          <InfoItem title="공연기간" content="2024.12.27 ~ 2024.12.31" />
+          <InfoItem title="장소" content={data!.location} />
+          <InfoItem title="공연기간" content={data!.period} />
           <InfoItem title="공연시간" content="120분" />
         </div>
         <div className="flex justify-between gap-4">

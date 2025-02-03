@@ -1,11 +1,10 @@
-import Button from '@/app/(home)/_component/ui/Button';
+import Button from '@/app/_component/ui/Button';
 import Image from 'next/image';
 import { findFriendById } from './_lib/dummyData';
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const data = findFriendById(Number(id));
-  console.log(data?.friendType);
 
   // 서버 컴포넌트는 다름
   return (

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import Input from '@/app/(home)/_component/ui/Input';
-import Button from '@/app/(home)/_component/ui/Button';
+import Input from '@/app/_component/ui/Input';
+import Button from '@/app/_component/ui/Button';
 
 export default function Login() {
   return (

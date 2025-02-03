@@ -6,6 +6,7 @@ export const HotConcertList = () => (
     {concertItemData?.map((item, idx) => (
       <CategoryItem
         key={item.id}
+        id = {item.id}
         name={item.name}
         location={item.location}
         period={item.period}

@@ -1,5 +1,5 @@
 'use client';
-import Input from '@/app/(home)/_component/ui/Input';
+import Input from '@/app/_component/ui/Input';
 import { useConcertListStore } from '@/app/_store/concertListStore';
 import React from 'react';
 
