@@ -4,30 +4,21 @@ import Button from '@/app/_component/ui/Button';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import { signUpSchema } from './_lib/signUpSchema';
+import { fetchSignUp } from './_lib/fetchSignUp';
 
-const schema = z
-  .object({
-    id: z.string().min(6, '아이디는 최소 6글자여야 합니다.'),
-    password: z.string().min(6, '패스워드는 최소 6글자여야합니다'),
-    checkPassword: z.string(),
-  })
-  .refine((data) => data.password === data.checkPassword, {
-    path: ['checkPassword'],
-    message: '비밀번호가 같지 않습니다.',
-  });
-type FormData = z.infer<typeof schema>;
+
 export default function SignUp() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(schema),
+  } = useForm<z.infer<typeof signUpSchema>>({
+    resolver: zodResolver(signUpSchema),
     mode: 'onChange',
   });
-  const onSubmit = (data: FormData) => {
-    const apiData = {id: data.id, password:data.password};
-    console.log('Form Data:', apiData);
+  const onSubmit = (data: z.infer<typeof signUpSchema>) => {
+    fetchSignUp(data);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col px-5 pt-20">
@@ -57,9 +48,9 @@ export default function SignUp() {
               role="password"
               placeholder="비밀번호를 한 번 더 입력하세요."
               isImg
-              {...register('checkPassword')}
+              {...register('retypePassword')}
             />
-            {errors.checkPassword && <div className="text-red-400"> {errors.checkPassword.message}</div>}
+            {errors.retypePassword && <div className="text-red-400"> {errors.retypePassword.message}</div>}
           </div>
         </div>
       </div>
