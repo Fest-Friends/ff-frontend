@@ -49,7 +49,7 @@ export default function Header() {
           </>
         )}
         {headerType(pathname) === 'title' && (
-          <>
+          <div className='flex gap-3 items-center'>
             <div
               onClick={() => {
                 router.back();
@@ -63,13 +63,16 @@ export default function Header() {
                 className="cursor-pointer"
               />
             </div>
-            <div className="text-lg text-white md:text-xl">
+            <div className="text-lg text-white leadng-[25.2px] md:text-xl">
               {title}
             </div>
-            </>
+          </div>
         )}
         {/* 추후 메뉴 디자인 만들어지면 메뉴 컴포넌트로 대체 */}
-        <Image width={24} height={24} alt="메뉴" src="/image/menu.png" className="cursor-pointer" />
+        <div className='flex gap-4'>
+          <Image width={24} height={24} alt='알림' src="/image/notifications.png" className='cursor-pointer'/>
+          <Image width={24} height={24} alt="메뉴" src="/image/menu.png" className="cursor-pointer" />
+        </div>
       </div>
     )
   );
