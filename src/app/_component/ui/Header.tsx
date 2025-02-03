@@ -19,12 +19,19 @@ export default function Header() {
   const router = useRouter();
   const params = useParams();
   const [isClient, setIsclient] = useState(false);
-  console.log(params);
-  const [isDynamic] = useState<boolean>(Object.keys(params).length !== 0);
-  console.log(isDynamic);
+  const [isDynamic,setIsDynamic] = useState<boolean>(Object.keys(params).length !== 0);
+  const [title,setTitle] = useState<string>('');
   useEffect(() => {
     setIsclient(true);
   }, []);
+  useEffect(() => {
+    setIsDynamic(Object.keys(params).length !== 0)
+  },[params]);
+  useEffect(() => {
+    if (headerType(pathname) === 'title') {
+      setTitle(getTitleFromSlug(pathname, isDynamic));     
+    }
+  },[pathname,isDynamic])
   return (
     isClient && (
       <div className="sticky top-0 z-50 flex w-full items-center justify-between bg-bg p-5">
@@ -57,9 +64,9 @@ export default function Header() {
               />
             </div>
             <div className="text-lg text-white md:text-xl">
-              {getTitleFromSlug(pathname, isDynamic)}
+              {title}
             </div>
-          </>
+            </>
         )}
         {/* 추후 메뉴 디자인 만들어지면 메뉴 컴포넌트로 대체 */}
         <Image width={24} height={24} alt="메뉴" src="/image/menu.png" className="cursor-pointer" />
