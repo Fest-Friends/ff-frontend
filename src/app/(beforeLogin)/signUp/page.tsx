@@ -6,6 +6,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { signUpSchema } from './_lib/signUpSchema';
 import { fetchSignUp } from './_lib/fetchSignUp';
+import { fetchLogin } from '../login/_lib/fetchLogin';
+import { useRouter } from 'next/navigation';
+
 
 
 export default function SignUp() {
@@ -17,9 +20,22 @@ export default function SignUp() {
     resolver: zodResolver(signUpSchema),
     mode: 'onChange',
   });
-  const onSubmit = (data: z.infer<typeof signUpSchema>) => {
-    fetchSignUp(data);
-  };
+  const router = useRouter();
+  const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
+    const {success:signUpSuccess,message:signUpMessage}: {success:boolean; message?:string; data:null} = await fetchSignUp(data);
+    if(signUpSuccess) {
+      alert('가입되었습니다! Fest Friends에 오신 걸 환영합니다!');
+      const {username,password} = data;
+      const {success:loginSuccess,message:loginMessage} = await fetchLogin({username,password});
+      if (loginSuccess) {
+        router.push('/');
+      } else {
+        alert(loginMessage);
+      }
+    } else {
+      alert(signUpMessage);
+    }
+  }
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col px-5 pt-20">
       <div className="flex flex-col gap-6">
