@@ -1,5 +1,5 @@
 export async function fetchSession() {
-  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/user/session/get-user-id`;
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/users/me`;
   try {
   const response = await fetch(url,{
     method: 'GET',
