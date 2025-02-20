@@ -12,6 +12,7 @@ export function getTitleFromSlug(pathname: string, isDynamic: boolean) {
     '/login': '로그인',
     '/signUp': '회원 가입',
     '/friends': '프렌즈 구하기',
+    '/notification': '알림',
   };
   return titles[pathname] || 'Default Title';
 }
