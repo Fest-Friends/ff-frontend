@@ -1,8 +1,5 @@
 'use client';
 
-import { fetchSession } from "@/lib/fetchSession";
-import { useEffect } from "react";
-
 type variantType = 'default' | 'secondary';
 
 interface ButtonProps {
@@ -27,14 +24,6 @@ export default function Button({
     default: 'bg-primary text-textDark',
     secondary: 'text-textLess border border-textMuted',
   };
-  async function fe() {
-    const data = await fetchSession();
-    return data;
-  }
-  useEffect(() => {
-    const data = fe();
-    console.log(data);
-  },[])
   return (
     <button
       className={`w-full items-center justify-center rounded-xl py-3 first-line:flex ${variantCss[variant]} text-sm font-semibold`}
