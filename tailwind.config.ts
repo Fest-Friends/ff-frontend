@@ -20,6 +20,12 @@ export default {
         textLess: 'var(--textLess)',
         textMuted : 'var(--textMuted)',
       },
+      width: {
+        snack : 'calc(100% - 40px)',
+      },
+      boxShadow: {
+        snack: '-4px 0px 12px rgba(0, 0, 0, 0.12)',
+      },
     },
   },
   plugins: [],
