@@ -1,13 +1,15 @@
 'use client';
 import Input from '@/app/_component/ui/Input';
 import { useConcertListStore } from '@/app/_store/concertListStore';
-import React from 'react';
+import React, { useState } from 'react';
 
 const SearchConcert = () => {
   const { actions } = useConcertListStore();
+  const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
+    setInputValue(value);
     actions.setSearchList(value);
   };
 
@@ -19,6 +21,7 @@ const SearchConcert = () => {
         placeholder="콘서트 이름을 검색하세요."
         isImg
         onChange={handleInputChange}
+        value={inputValue}
       />
     </div>
   );
