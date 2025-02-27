@@ -1,9 +1,9 @@
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Friend } from '../../_types/friends';
 
 export function FriendComponent({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   id,
   introduction,
   name,

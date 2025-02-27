@@ -1,6 +1,6 @@
 'use client';
 import Input from '@/app/_component/ui/Input';
-import { useConcertListStore } from '@/app/store/concertListStore';
+import { useConcertListStore } from '@/app/_store/concertListStore';
 import React from 'react';
 
 const SearchConcert = () => {
