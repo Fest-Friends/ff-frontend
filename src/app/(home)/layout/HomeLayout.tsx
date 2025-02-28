@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { HomeBackground } from '../HomeBackground';
@@ -12,8 +12,8 @@ export default function HomeLayout() {
   const router = useRouter();
   return (
     <div>
-      <HomeBackground />
-      {/* <HomeCarousel /> */}
+      {/* <HomeBackground /> */}
+      <HomeCarousel />
       <div className="mb-40 mt-10 px-5">
         <div className="flex items-center gap-2">
           <div className="text-xl font-semibold">현재 가장 핫한 콘서트</div>
@@ -23,7 +23,9 @@ export default function HomeLayout() {
             height={16}
             alt="현재 가장 핫한 콘서트"
             className="cursor-pointer"
-            onClick={() => {router.push('/concert')}}
+            onClick={() => {
+              router.push('/concert');
+            }}
           />
         </div>
         <div className="mt-5 flex w-full flex-col items-center">

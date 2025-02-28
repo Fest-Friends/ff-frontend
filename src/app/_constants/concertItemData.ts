@@ -11,7 +11,7 @@ export const concertItemData = [
   },
   {
     id: 2,
-    name: "2025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL",
+    name: "2024 안녕하세요",
     location: "올림픽 핸드볼경기장",
     period: "2025.02.14 - 2025.02.16",
     imageUrl: "/image/example.png",
@@ -21,7 +21,7 @@ export const concertItemData = [
   },
   {
     id: 3,
-    name: "2025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL",
+    name: "2024 TWS 2ST",
     location: "올림픽 핸드볼경기장",
     period: "2025.02.14 - 2025.02.16",
     imageUrl: "/image/example.png",
@@ -31,7 +31,7 @@ export const concertItemData = [
   },
   {
     id: 4,
-    name: "2025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL 025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL 아 2025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL 025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL 아",
+    name: "2024 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL 025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL 아 2025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL 025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL 아",
     location: "올림픽 핸드볼경기장",
     period: "2025.02.14 - 2025.02.16",
     imageUrl: "/image/example.png",

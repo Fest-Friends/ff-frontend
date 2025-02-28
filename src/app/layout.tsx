@@ -18,12 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="text-white">
-        <TanStackProvider>
-          <Header />
-          <div>{children}</div>
+        {/* <TanStackProvider> */}
+        <Header />
+        <div>{children}</div>
 
-          <Footer />
-        </TanStackProvider>
+        <Footer />
+        {/* </TanStackProvider> */}
       </body>
     </html>
   );

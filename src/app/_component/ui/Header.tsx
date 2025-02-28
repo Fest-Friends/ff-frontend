@@ -19,19 +19,19 @@ export default function Header() {
   const router = useRouter();
   const params = useParams();
   const [isClient, setIsclient] = useState(false);
-  const [isDynamic,setIsDynamic] = useState<boolean>(Object.keys(params).length !== 0);
-  const [title,setTitle] = useState<string>('');
+  const [isDynamic, setIsDynamic] = useState<boolean>(Object.keys(params).length !== 0);
+  const [title, setTitle] = useState<string>('');
   useEffect(() => {
     setIsclient(true);
   }, []);
   useEffect(() => {
-    setIsDynamic(Object.keys(params).length !== 0)
-  },[params]);
+    setIsDynamic(Object.keys(params).length !== 0);
+  }, [params]);
   useEffect(() => {
     if (headerType(pathname) === 'title') {
-      setTitle(getTitleFromSlug(pathname, isDynamic));     
+      setTitle(getTitleFromSlug(pathname, isDynamic));
     }
-  },[pathname,isDynamic])
+  }, [pathname, isDynamic]);
   return (
     isClient && (
       <div className="sticky top-0 z-50 flex w-full items-center justify-between bg-bg p-5">
@@ -49,7 +49,7 @@ export default function Header() {
           </>
         )}
         {headerType(pathname) === 'title' && (
-          <div className='flex gap-3 items-center'>
+          <div className="flex items-center gap-3">
             <div
               onClick={() => {
                 router.back();
@@ -63,15 +63,34 @@ export default function Header() {
                 className="cursor-pointer"
               />
             </div>
-            <div className="text-lg text-white leadng-[25.2px] md:text-xl">
-              {title}
-            </div>
+            <div className="leadng-[25.2px] text-lg text-white md:text-xl">{title}</div>
           </div>
         )}
         {/* 추후 메뉴 디자인 만들어지면 메뉴 컴포넌트로 대체 */}
-        <div className='flex gap-4'>
-          <Image width={24} height={24} alt='알림' src="/image/notifications.png" className='cursor-pointer'/>
-          <Image width={24} height={24} alt="메뉴" src="/image/menu.png" className="cursor-pointer" />
+        <div className="flex gap-4">
+          <Link href="/concert">
+            <Image
+              width={24}
+              height={24}
+              alt="검색"
+              src="/image/search.png"
+              className="cursor-pointer"
+            />
+          </Link>
+          <Image
+            width={24}
+            height={24}
+            alt="알림"
+            src="/image/notifications.png"
+            className="cursor-pointer"
+          />
+          <Image
+            width={24}
+            height={24}
+            alt="메뉴"
+            src="/image/menu.png"
+            className="cursor-pointer"
+          />
         </div>
       </div>
     )
